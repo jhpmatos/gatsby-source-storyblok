@@ -77,7 +77,7 @@ exports.sourceNodes = async function({ boundActionCreators }, options) {
       }
     })
 
-    const datasourceDimensions = datasource.dimensions || options.datasourceDimensions || []
+    const datasourceDimensions =  options.datasourceDimensions || datasource.dimensions || []
 
     for (const dimension of datasourceDimensions) {
       await Sync.getAll('datasource_entries', {
